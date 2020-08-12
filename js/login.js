@@ -5,21 +5,23 @@
 document.addEventListener("DOMContentLoaded", function(e){
 document.getElementById('submitBtn').addEventListener("click",function(e){
     let inputEmail = document.getElementById("inputEmail");
-    let inputPassword = document.getElementById("imputPassword");
+    let inputPassword = document.getElementById("inputPassword");
     let camposCompletos = true;
 
     if (inputEmail.value === ""){
-        imputEmail.classList.add("invalid")
+        inputEmail.classList.add("invalid")
         camposCompletos = false;
+        alert("Ingresar Email");
     
     }
     if( inputPassword.value === ''){
-        inputPassword.classList.add('invalid');
+        inputPassword.classList.add("invalid");
         camposCompletos = false;
+        alert("Ingresar Password")
     }
 
     if(camposCompletos){
-            window.location = "index.html"
+            window.location = "inicio.html"
 };
 
 });
