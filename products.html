@@ -23,9 +23,17 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
-    <div class="list-group" id="car-list-container">
-      
+    <div id="flitrorango">
+
+      <label for="cantidad">Precio: <label>
+  <input type="number" id="rango-min" name="cantidad"  placeholder="Mín" >
+  <input type="number" id="rango-max" name="cantidad"  placeholder="Máx" >
+  <button id="filtrar">Filtrar</button>
+  <button id="limpiar">Limpiar</button>
+
     </div>
+
+    <div class="list-group" id="car-list-container"></div>
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
