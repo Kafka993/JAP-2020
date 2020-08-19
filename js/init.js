@@ -47,16 +47,17 @@ var getJSONData = function(url){
 
 
 document.addEventListener("DOMContentLoaded", function(e){
-  getJSONData(PRODUCTS_URL).then(function(resultObj){
-      if (resultObj.status === "ok")
-      {
-          productArray = resultObj.data;
-          //Muestro las categorías ordenadas
-          showProductList(productArray);
-      }
-  });
-});
+   let userLogged = localStorage.getItem("User-Logged");
+   let infoUser = document.getElementById("info-user")
+   let user = document.getElementById("user");
 
+   if(userLogged){
+     userLogged=JSON.parse(userLogged);
+     user.innerText = user.innerText + "Usuario logueado: " + userLogged.email
+     infoUser.style = "display: inline-block"
+   }
 
-
-      
+   document.getElementById("salir").addEventListener("click", function(){
+     localStorage.removeItem("user-Logged");
+     window.location = "login.html"
+   })
