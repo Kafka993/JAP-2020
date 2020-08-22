@@ -2,10 +2,36 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
+const ODER_ASC_BY_PRE = "pag ->PAG";
+const ODER_DESC_BY_PRE = "PAG -> pag";  
+
+
+
 var productArray = [];
+
+
 
 var minPrecio = undefined
 var maxPrecio = undefined
+
+function sortProducts (criterio, array){
+    let result =[];
+
+    if(criterio === ODER_ASC_BY_PRE){
+        result = array.sort(function(a,b){
+            if (a.cost < b.cost){ return -1;}
+            if (a.cost > b.cost){ return 1;}
+            return 0
+        });
+    } else if (criterio === ODER_DESC_BY_PRE){
+        result = array.sort(function(a,b){
+            if (a.cost > b.cost){ return -1;}
+            if (a.cost < b.cost){ return 1;}
+            return 0
+        });
+    }
+    return result;
+};
 
 function showProductList(array){
 
@@ -52,8 +78,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             productArray = resultObj.data;
-            //Muestro las categorías ordenadas
+           
+         //Muestro las categorías ordenadas
             showProductList(productArray);
+            productArray = sortProducts(ODER_ASC_BY_PRE, productArray);
         }
     });
 
@@ -89,5 +117,16 @@ document.getElementById("limpiar").addEventListener("click", function() {
     showProductList(productArray);
 });
 
+document.getElementById("sortPreAsc").addEventListener("click", function (){
+    productArray = sortProducts(ODER_ASC_BY_PRE, productArray);
+
+    showProductList(productArray);
 });
 
+document.getElementById("sortPreDesc").addEventListener("click", function (){
+    productArray = sortProducts(ODER_DESC_BY_PRE, productArray);
+
+    showProductList(productArray);
+});
+
+});

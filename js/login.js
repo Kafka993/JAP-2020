@@ -7,6 +7,7 @@ document.getElementById('submitBtn').addEventListener("click",function(e){
     let inputEmail = document.getElementById("inputEmail");
     let inputPassword = document.getElementById("inputPassword");
     let camposCompletos = true;
+    
 
     if (inputEmail.value === ""){
         inputEmail.classList.add("invalid")
@@ -22,7 +23,10 @@ document.getElementById('submitBtn').addEventListener("click",function(e){
 
     if(camposCompletos){
             window.location = "inicio.html"
+            localStorage.setItem("User-Logged", JSON.stringify({email: inputEmail.value}));
+            
 };
 
 });
+
 });

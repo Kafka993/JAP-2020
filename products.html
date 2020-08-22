@@ -16,6 +16,8 @@
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <div id="info-user" class="site-header sticky-top py-1 bg-dark" style="display:none">
+          <p id="user" class="site-header sticky-top py-1 bg-dark"></p></div>
         <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -24,12 +26,17 @@
       </div>
     </nav>
     <div id="flitrorango">
+      
 
       <label for="cantidad">Precio: <label>
   <input type="number" id="rango-min" name="cantidad"  placeholder="Mín" >
   <input type="number" id="rango-max" name="cantidad"  placeholder="Máx" >
   <button id="filtrar">Filtrar</button>
   <button id="limpiar">Limpiar</button>
+  <label for="Ordenar">Ordenar Por : </label>
+  <button id="sortPreAsc">Pre ASC</button>
+  <button id="sortPreDesc">PRE DESC</button>
+
 
     </div>
 
