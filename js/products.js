@@ -2,14 +2,12 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-const ODER_ASC_BY_PRE = "pag ->PAG";
-const ODER_DESC_BY_PRE = "PAG -> pag";  
-
+const ODER_ASC_BY_PRICE = "price -> PRICE";
+const ODER_DESC_BY_PRICE = "PRICE -> price";  
+const ORDER_DESC_BY_SOLD = "SOLD -> sold";
 
 
 var productArray = [];
-
-
 
 var minPrecio = undefined
 var maxPrecio = undefined
@@ -17,19 +15,28 @@ var maxPrecio = undefined
 function sortProducts (criterio, array){
     let result =[];
 
-    if(criterio === ODER_ASC_BY_PRE){
+    if(criterio === ODER_ASC_BY_PRICE){
         result = array.sort(function(a,b){
             if (a.cost < b.cost){ return -1;}
             if (a.cost > b.cost){ return 1;}
             return 0
         });
-    } else if (criterio === ODER_DESC_BY_PRE){
+    } else if (criterio === ODER_DESC_BY_PRICE){
         result = array.sort(function(a,b){
             if (a.cost > b.cost){ return -1;}
             if (a.cost < b.cost){ return 1;}
             return 0
         });
     }
+    else if (criterio === ORDER_DESC_BY_SOLD){
+        result = array.sort(function(a,b){
+        if (a.soldCount > b.soldCount){ return -1;}
+        if (a.soldCount < b.soldCount){ return 1;}
+        return 0
+    });
+}
+        
+    
     return result;
 };
 
@@ -86,10 +93,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 
 
-document.getElementById("filtrar").addEventListener("click", function() {
+document.getElementById("rangeFilterCount").addEventListener("click", function() {
 
-    minPrecio=document.getElementById("rango-min").value;
-    maxPrecio=document.getElementById("rango-max").value;
+    minPrecio=document.getElementById("rangeFilterCountMin").value;
+    maxPrecio=document.getElementById("rangeFilterCountMax").value;
 
     if((minPrecio != undefined) && (minPrecio !="") && (parseInt(minPrecio)) >= 0 ){
         minPrecio = parseInt(minPrecio);
@@ -106,10 +113,10 @@ document.getElementById("filtrar").addEventListener("click", function() {
 showProductList(productArray);
 });
 
-document.getElementById("limpiar").addEventListener("click", function() {
+document.getElementById("clearRangeFilter").addEventListener("click", function() {
 
-    minPrecio=document.getElementById("rango-min").value = ""
-    maxPrecio=document.getElementById("rango-max").value = ""
+    minPrecio=document.getElementById("rangeFilterCountMin").value = ""
+    maxPrecio=document.getElementById("rangeFilterCountMax").value = ""
 
     minPrecio = undefined;
     maxPrecio = undefined;
@@ -117,16 +124,23 @@ document.getElementById("limpiar").addEventListener("click", function() {
     showProductList(productArray);
 });
 
-document.getElementById("sortPreAsc").addEventListener("click", function (){
-    productArray = sortProducts(ODER_ASC_BY_PRE, productArray);
+document.getElementById("sortPriceAsc").addEventListener("click", function (){
+    productArray = sortProducts(ODER_ASC_BY_PRICE, productArray);
 
     showProductList(productArray);
 });
 
-document.getElementById("sortPreDesc").addEventListener("click", function (){
-    productArray = sortProducts(ODER_DESC_BY_PRE, productArray);
+document.getElementById("sortPriceDesc").addEventListener("click", function (){
+    productArray = sortProducts(ODER_DESC_BY_PRICE, productArray);
 
     showProductList(productArray);
+});
+
+document.getElementById("sortsolddes").addEventListener("click", function (){
+    productArray = sortProducts(ORDER_DESC_BY_SOLD, productArray);
+
+    showProductList(productArray);
+
 });
 
 });

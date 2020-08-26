@@ -4,7 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", function(e){
 document.getElementById('submitBtn').addEventListener("click",function(e){
-    let inputEmail = document.getElementById("inputEmail");
+    let inputEmail = document.getElementById("email");
     let inputPassword = document.getElementById("inputPassword");
     let camposCompletos = true;
     
@@ -22,7 +22,7 @@ document.getElementById('submitBtn').addEventListener("click",function(e){
     }
 
     if(camposCompletos){
-            window.location = "inicio.html"
+            window.location.href = "inicio.html"
             localStorage.setItem("User-Logged", JSON.stringify({email: inputEmail.value}));
             
 };

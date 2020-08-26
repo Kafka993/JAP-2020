@@ -142,3 +142,42 @@ a.custom-card:hover {
 #user{
   color: white;
 }
+.button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px RGBA(255, 255, 255, 1);
+  border-radius: .5em;
+  box-shadow: 0 1px 2px RGBA(255, 255, 255, 1);
+  
+}
+.button:hover{
+  text-decoration: none;
+}
+.button:active{
+  position: relative;
+  top: 1px;
+}
+
+.orange {
+	color: #fef4e9;
+	border: solid 1px#FF1493;
+	background:#FF1493;
+	background: -moz-linear-gradient(top,  #FF1493,  #FF1493);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+	background: #FF1493;
+	background: -moz-linear-gradient(top, #FF1493,  #FF1493);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+	color: #fcd3a5;
+	background: -moz-linear-gradient(top,  #FF1493,  #FF1493);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+  
