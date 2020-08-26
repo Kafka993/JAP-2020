@@ -11,6 +11,8 @@ var productArray = [];
 
 var minPrecio = undefined
 var maxPrecio = undefined
+var buscar = undefined
+
 
 function sortProducts (criterio, array){
     let result =[];
@@ -49,6 +51,8 @@ function showProductList(array){
         if(((minPrecio == undefined) || (minPrecio != undefined && parseInt(product.cost) >= minPrecio )) &&
         ((maxPrecio == undefined) ||(maxPrecio != undefined && parseInt(product.cost) <= maxPrecio ))){
  
+            if (buscar == undefined || product.name.toLowerCase().indexOf(buscar) !=-1 || product.description.toLowerCase().indexOf(buscar) !=-1   ){
+
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
@@ -69,7 +73,9 @@ function showProductList(array){
             </div>
         </div>
         `
-        }
+        
+    }
+}
         document.getElementById("car-list-container").innerHTML = htmlContentToAppend;
     }
 }
@@ -140,6 +146,20 @@ document.getElementById("sortsolddes").addEventListener("click", function (){
     productArray = sortProducts(ORDER_DESC_BY_SOLD, productArray);
 
     showProductList(productArray);
+
+});
+
+document.getElementById("search").addEventListener("input", function(){
+    buscar = document.getElementById("search").value.toLowerCase();
+showProductList(productArray);
+
+});
+
+
+document.getElementById("clean").addEventListener("click", function() {
+    document.getElementById("search").value = ""
+    buscar = undefined;
+    showProductList()
 
 });
 
