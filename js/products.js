@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function(e){
            
          //Muestro las categorías ordenadas
             showProductList(productArray);
-            productArray = sortProducts(ODER_ASC_BY_PRE, productArray);
+            productArray = sortProducts(ODER_ASC_BY_PRICE, productArray);
         }
     });
 
