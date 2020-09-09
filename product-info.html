@@ -18,45 +18,76 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-     
+
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="info-user" class="site-header sticky-top py-1 bg-dark" style="display:none">
-        <p id="user" class="site-header sticky-top py-1 bg-dark"></p></div>
-    </div>
+      <div id="info-user" class="site-header sticky-top py-1 bg-dark , dropdown" style="display:none">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" id="salir">Salir</a>
+        </div>
+      </div>
+      </div><p id="user" class="site-header sticky-top py-1 bg-dark"></p></div>
+  </div>
   </nav>
   <h3 id="productName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
+  <hr class="my-3">
+  <dl>
+    <dt>Descripción</dt>
+    <dd>
+      <p id="productDescription"></p>
+    </dd>
 
-        <dt>Precio</dt>
-        <dd>
-          <p id="productCost"></p>
-        </dd>
+    <dt>Precio</dt>
+    <dd>
+      <p id="productCost"></p>
+    </dd>
 
-        <dt>Autos Vendidos</dt>
-        <dd>
-          <p id="productCount"></p>
-        </dd>
+    <dt>Autos Vendidos</dt>
+    <dd>
+      <p id="productCount"></p>
+    </dd>
     <dt>Imágenes ilustrativas</dt>
     <dd>
       <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-      
+
     </dd>
 
+    <dt >Comentarios</dt>
+    <p id=commentsUser></p>
+    
+    
+    
+    <dt>Comentarios Y Calificación</dt><br>
+
+    <dt><label for="comentarios ">Comentarios </label></dt><br>
+
+    <textarea name="comentarios" rows="2" cols="15" class="textarea"></textarea><br><br>
+    <input type="submit" value="Enviar" class="btn btn-light, orange button"><br><br>
+
+    <div class="radio">
+    <dt><label for="calificacion">calificación</label></dt>
+    <input type="radio" id="1" name="calificacion" value="1">
+    <label for="1">1</label>
+    <input type="radio" id="2" name="calificacion" value="2">
+    <label for="2">2</label>
+    <input type="radio" id="3" name="calificacion" value="3">
+    <label for="">3</label>
+    <input type="radio" id="4" name="calificacion" value="4">
+    <label for="4">4</label>
+    <input type="radio" id="5" name="calificacion" value="5">
+    <label for="5">5</label>
+  </div>
     <dt> Productos Relacionados</dt>
-    <dd> 
-      <p id=productrelated> </p>
+    <dd>
+      <p> </p>
     </dd>
   </dl>
-</div>
+  </div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
