@@ -34,54 +34,56 @@
       </div><p id="user" class="site-header sticky-top py-1 bg-dark"></p></div>
   </div>
   </nav>
-  <h3 id="productName"></h3>
+  <main role="main" class="pb-5">
+  <div class="text-center p-4">
+  <h2 id="productName"></h2>
+</div>
   <hr class="my-3">
+  <dt>Imágenes ilustrativas</dt>
+    <dd>
+      <div class="row text-center text-lg-left pt-2" id="productImagesGallery"></div>
+
+    </dd>
+    <hr class="my-3">
   <dl>
-    <dt>Descripción</dt>
+
+    <dt class="text-center p-4">Descripción</dt>
     <dd>
-      <p id="productDescription"></p>
+      <p id="productDescription" class="text-justify"></p>
     </dd>
-
-    <dt>Precio</dt>
+    <hr class="my-3">
+    <dt class="text-center p-4" >Precio</dt>
     <dd>
-      <p id="productCost"></p>
+      <p id="productCost" class="text-center p-4" ></p>
     </dd>
-
-    <dt>Autos Vendidos</dt>
+    <hr class="my-3">
+    <dt class="text-center p-4">Autos Vendidos</dt>
     <dd>
-      <p id="productCount"></p>
+      <p id="productCount"  class="text-center p-4"></p>
     </dd>
-    <dt>Imágenes ilustrativas</dt>
+    <hr class="my-3">
+    <dt class="text-center p-4" >Comentarios</dt>
     <dd>
-      <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-
-    </dd>
-
-    <dt >Comentarios</dt>
-    <p id=commentsUser></p>
-    
-    
-    
-    <dt>Comentarios Y Calificación</dt><br>
-
-    <dt><label for="comentarios ">Comentarios </label></dt><br>
-
+    <p class="text-center p-4" id=commentsUser></p>
+  </dd>
+    <dt class="text-center p-4" >Comentarios y Calificación</dt><br>
+    <div class="radio, text-center p-4">
+      <dt><label for="calificacion">calificación</label></dt>
+      <input type="radio" id="1" name="calificacion" value="1">
+      <label for="1">1</label>
+      <input type="radio" id="2" name="calificacion" value="2">
+      <label for="2">2</label>
+      <input type="radio" id="3" name="calificacion" value="3">
+      <label for="">3</label>
+      <input type="radio" id="4" name="calificacion" value="4">
+      <label for="4">4</label>
+      <input type="radio" id="5" name="calificacion" value="5">
+      <label for="5">5</label>
+    </div>
     <textarea name="comentarios" rows="2" cols="15" class="textarea"></textarea><br><br>
     <input type="submit" value="Enviar" class="btn btn-light, orange button"><br><br>
 
-    <div class="radio">
-    <dt><label for="calificacion">calificación</label></dt>
-    <input type="radio" id="1" name="calificacion" value="1">
-    <label for="1">1</label>
-    <input type="radio" id="2" name="calificacion" value="2">
-    <label for="2">2</label>
-    <input type="radio" id="3" name="calificacion" value="3">
-    <label for="">3</label>
-    <input type="radio" id="4" name="calificacion" value="4">
-    <label for="4">4</label>
-    <input type="radio" id="5" name="calificacion" value="5">
-    <label for="5">5</label>
-  </div>
+    
     <dt> Productos Relacionados</dt>
     <dd>
       <p> </p>
@@ -96,6 +98,7 @@
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
+  </main>
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">

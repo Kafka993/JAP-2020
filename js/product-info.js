@@ -5,7 +5,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 var product = {};
-
+var commentsArray = [];
 
 function showProductImg(array) {
 
@@ -17,6 +17,7 @@ function showProductImg(array) {
         htmlContentToAppend += `
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
+            <a href="${imageSrc}" target="_blank">
                 <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
             </div>
         </div>
@@ -26,36 +27,6 @@ function showProductImg(array) {
     document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
 
 }
-var commentsA = [];
-function showco(commentsA) {
-
-  
-commentsA.forEach(function (comment) {
-       
-   
-    let comments = "<hr>";
-    let score = "";
-
-        comments += ` <strong>` + comment.user + `</strong> dice:<br> <p>` + comment.description + `</p>`
-        
-        for (let i = 1; i <= comment.score; i++) {
-            score += `<i class="fa fa-star checked"></i> `;
-        }
-        for (let i = comment.score + 1; i <= 5; i++) {
-            score += `<i class="fa fa-star"></i> `;
-        }
-
-        comments += `<sub>` + comment.dateTime + `</sub><br> `
-        comments += `<div style="text-align: right;">` + score + `</div><br><hr> `
-
-     
-        document.getElementById("commentsUser").innerHTML = comments;
-     
-     
-    });  
-};
-
-
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -79,19 +50,48 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     });
 });
+
+function showco(commentsA) {
+let comments = ""
+commentsA.forEach(function (comment) {
+       
+   
+    
+    let score = ""
+
+        comments += ` <strong>` + comment.user + `</strong> dice:<br> <p>` + comment.description + `</p>`
+        
+        for (let i = 1; i <= comment.score; i++) {
+            score += `<i class="fa fa-star checked"></i> `;
+        }
+        for (let i = comment.score + 1; i <= 5; i++) {
+            score += `<i class="fa fa-star"></i> `;
+        }
+
+        comments += `<sub>` + comment.dateTime + `</sub><br> `
+        comments += `<div style="text-align: right;">` + score + `</div><br><hr> `
+
+    });  
+        document.getElementById("commentsUser").innerHTML = comments;
+     
+     
+    
+};
+
+
+
     
 document.addEventListener("DOMContentLoaded", function () {
 getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
 
-            commentsA = resultObj.data;
+            commentsArray = resultObj.data;
 
-            showco(commentsA)
+            showco(commentsArray)
 
 
         }
     });
 });
-
 
 

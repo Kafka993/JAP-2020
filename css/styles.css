@@ -190,4 +190,7 @@ a.custom-card:hover {
   background-color: #f8f8f8;
   resize: none;
 }
+.checked {
+  color:  #FF1493;
+}
 
