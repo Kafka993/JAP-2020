@@ -55,9 +55,7 @@ function showco(commentsA) {
 let comments = ""
 commentsA.forEach(function (comment) {
        
-   
-    
-    let score = ""
+let score = ""
 
         comments += ` <strong>` + comment.user + `</strong> dice:<br> <p>` + comment.description + `</p>`
         
@@ -94,4 +92,29 @@ getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
     });
 });
 
+let userLogged = localStorage.getItem("User-Logged");
 
+if (userLogged){
+    document.getElementById("newCo").style = "display:inline-block";
+
+}
+document.getElementById("sendCo").addEventListener("click",function(){
+
+    let now = new Date();
+
+    let dateTime =  `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} `;
+    dateTime += `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} `
+
+    let newComment = {
+ score: parseInt(document.getElementById("NewScore").value),
+ description: document.getElementById("newComment").value,
+ user: JSON.parse(localStorage.getItem("User-Logged")).email,
+ dateTime:dateTime
+    }; 
+
+commentsArray.push(newComment);
+showco(commentsArray)
+
+
+
+})

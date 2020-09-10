@@ -66,22 +66,21 @@
     <dd>
     <p class="text-center p-4" id=commentsUser></p>
   </dd>
-    <dt class="text-center p-4" >Comentarios y Calificación</dt><br>
-    <div class="radio, text-center p-4">
+<dt class="text-center p-4" >Comentarios y Calificación</dt><br>
+<div id="newCo" style="display: none;"></div>    
+<div class="radio, text-center p-4" >
+
       <dt><label for="calificacion">calificación</label></dt>
-      <input type="radio" id="1" name="calificacion" value="1">
-      <label for="1">1</label>
-      <input type="radio" id="2" name="calificacion" value="2">
-      <label for="2">2</label>
-      <input type="radio" id="3" name="calificacion" value="3">
-      <label for="">3</label>
-      <input type="radio" id="4" name="calificacion" value="4">
-      <label for="4">4</label>
-      <input type="radio" id="5" name="calificacion" value="5">
-      <label for="5">5</label>
+      <select name="" id="NewScore">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
     </div>
-    <textarea name="comentarios" rows="2" cols="15" class="textarea"></textarea><br><br>
-    <input type="submit" value="Enviar" class="btn btn-light, orange button"><br><br>
+    <textarea name="comentarios" rows="2" cols="15" class="textarea" id="newComment"></textarea><br><br>
+    <input type="submit" value="Enviar" class="btn btn-light, orange button" id="sendCo"><br><br>
 
     
     <dt> Productos Relacionados</dt>
