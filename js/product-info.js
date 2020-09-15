@@ -4,8 +4,9 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var product = {};
+var product = [];
 var commentsArray = [];
+var autosarray= [];
 
 function showProductImg(array) {
 
@@ -51,6 +52,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function showRelated(arrayl, arrayRelated){
+let contenido ="<hr>";
+arrayRelated.forEach(function(i){
+
+contenido += `
+<a href="product-info.html" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="` + arrayl[i].imgSrc + `" alt="` + arrayl[i].description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ arrayl[i].name +`</h4>
+                            <small class="text-muted">` + "Precio: " + " " + product.currency   +" "+ product.cost + ` </small>
+                        </div>
+                        <p class="mb-1">` + arrayl[i].description + `</p>
+                    </div>
+                </div>
+            </a>
+            `
+
+
+})
+
+document.getElementById("related").innerHTML = contenido
+
+
+}
+
+
+
+
 function showco(commentsA) {
 let comments = ""
 commentsA.forEach(function (comment) {
@@ -87,6 +120,17 @@ getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
 
             showco(commentsArray)
 
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+
+            autosarray = resultObj.data;
+
+            showRelated(autosarray,product.relatedProducts)
 
         }
     });
