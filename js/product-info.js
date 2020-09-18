@@ -8,26 +8,8 @@ var product = [];
 var commentsArray = [];
 var carArray= [];
 
-function showProductImg(array) {
 
-    let htmlContentToAppend = ""
 
-    for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-            <a href="${imageSrc}" target="_blank">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
-        `
-    }
-
-    document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
-
-}
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -45,12 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
             productCostHTML.innerHTML = product.currency + " " + product.cost;
             productCountHTML.innerHTML = product.soldCount;
 
-
-            //Muestro las imagenes en forma de galería
-            showProductImg(product.images);
         };
     });
 });
+
+
 
 function showRelated(arrayl, arrayRelated){
 let contenido ="<hr>";
@@ -77,6 +58,11 @@ contenido += `
 })
 
 document.getElementById("related").innerHTML = contenido
+document.getElementById("imgs1").src=product.images[0]
+document.getElementById("imgs2").src=product.images[1]
+document.getElementById("imgs3").src=product.images[2]
+document.getElementById("imgs4").src=product.images[3]
+document.getElementById("imgs5").src=product.images[4]
 
 
 }
