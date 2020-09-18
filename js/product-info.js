@@ -6,7 +6,7 @@
 //elementos HTML presentes.
 var product = [];
 var commentsArray = [];
-var autosarray= [];
+var carArray= [];
 
 function showProductImg(array) {
 
@@ -128,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
 
-            autosarray = resultObj.data;
+            carArray = resultObj.data;
 
-            showRelated(autosarray,product.relatedProducts)
+            showRelated(carArray,product.relatedProducts)
 
         }
     });
