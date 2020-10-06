@@ -53,17 +53,37 @@
         </div><p id="user" class="site-header sticky-top"></p></div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+        <h2>Carrito</h2>
+        <p class="lead">Verás aquí todas las compras que has realizado</p>
     </div>
-  </div>
+  <table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Articulo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Subtotal </th>
+      <th scope="col"> Moneda</th>
+    </tr>
+  </thead>
+  <tbody id="listado"> </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4" scope="row">Total de la compra</th>
+      <th id="total"></th>
+      <td> USD </td>
+    </tr>
+  </tfoot>
+</table>
+<submit  type="button" class="btn btn-success btn-lg btn-block" > Completar compra </submit>
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
-      <div></div>
+      
       <div></div>
       <div></div>
       <div></div>
