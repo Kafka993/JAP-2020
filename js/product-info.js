@@ -99,6 +99,10 @@ let score = ""
 
     
 document.addEventListener("DOMContentLoaded", function () {
+    let userLogged = localStorage.getItem("User-Logged");
+    if(!userLogged){
+        document.getElementById("newcommentcontent").style="display: inline-block"
+    }
 getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
 

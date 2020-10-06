@@ -73,7 +73,17 @@ calcTotal()
 
 
 document.addEventListener("DOMContentLoaded", function(e){
+    let userLogged = localStorage.getItem("User-Logged");
+    if(!userLogged){
+        localStorage.setItem("login-need", JSON.stringify({
+            from: "cart.html",
+        }));
+        alert("Debes estar resgistrado para finalizar la compra")
+        window.location = "index.html"
+    }
+    
     getJSONData(CART_INFO_URL).then(function (resultObj) {
+
         if (resultObj.status === "ok") {
 
             itemsArray = resultObj.data.articles;
