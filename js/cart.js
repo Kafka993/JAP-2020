@@ -3,51 +3,34 @@
 //elementos HTML presentes.
 var itemsArray = [];
 
-function calcTotal(){
-    let total = 0;
-    let subs = document.getElementsByClassName("subtotal")
-    
-    for(let i=0; i< subs.length; i++ ){
-        total += parseInt(subs[i].innerHTML)
-    }
-document.getElementById("total").innerText = total;
-}
-
-
-
-
 function calcSubtotal(unitCost,i){
 let count = parseInt(document.getElementById(`count${i}`).value);
     subtotal = count * unitCost
    
-
 document.getElementById(`itemSubtotal${i}`).innerHTML= subtotal;
-
-calcTotal()
 }
 
-
 function showItems(array){
+    
     let contenido= "";
-
     for (let i=0; i<array.length; i++){
         let item = array[i];
-        let sub = item.count * item.unitCost;
-
         if(item.currency === "UYU"){
-            item.unitCost = item.unitCost / 40
+            item.unitCost /= 40 
             item.currency = "USD"
         }
-
-        contenido +=  `
+        
+        let sub = item.count * item.unitCost;
+        
+       contenido +=  `
         <tr>
         <td scope="row" ><img src='${item.src}' width="150px" alt="" class="img-thumbnail"></td>
 
         <th>${item.name}</th>
 
-        <td>${item.currency}    ${item.unitCost}</td>
+        <td>${item.currency} ${item.unitCost}</td>
 
-        <td><input style= "width:60px;" onchange="calcSubtotal(${item.unitCost }, ${i})"
+        <td><input style= "width:60px;" onchange="calcSubtotal(${item.unitCost}, ${i})"
                         
         type="number" id="count${i}" value="${item.count}" min="1"></td>
 
@@ -59,27 +42,24 @@ function showItems(array){
         <td><button class= "btn-btn-danger" onclick="eliminar(${i})">x</button><td>  
     </tr>
      `
-
+    
+         
     document.getElementById("listado").innerHTML= contenido;
-
-}
-calcTotal()
+    
 }
 
-
-
-
-
-
+}
 
 document.addEventListener("DOMContentLoaded", function(e){
     let userLogged = localStorage.getItem("User-Logged");
+
     if(!userLogged){
         localStorage.setItem("login-need", JSON.stringify({
             from: "cart.html",
-        }));
-        alert("Debes estar resgistrado para finalizar la compra")
+            }));
+            alert("Debes estar resgistrado para finalizar la compra")
         window.location = "index.html"
+        
     }
     
     getJSONData(CART_INFO_URL).then(function (resultObj) {
@@ -89,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             itemsArray = resultObj.data.articles;
 
             showItems(itemsArray)
-        
+            
 
         }
     });

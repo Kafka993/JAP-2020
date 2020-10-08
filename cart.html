@@ -58,8 +58,11 @@
         <h2>Carrito</h2>
         <p class="lead">Verás aquí todas las compras que has realizado</p>
     </div>
+  </main>
     <span style="text-align: right;">Cambio 1 USD = 40 UYU</span>
-  <table class="table table-striped">
+    
+
+    <table class="table table-striped">
 
   <thead>
     <tr>
@@ -74,12 +77,53 @@
   <tbody id="listado"> </tbody>
   <tfoot>
     <tr>
-      <th colspan="4" scope="row">Total de la compra</th>
+      <th colspan="4" scope="row"></th>
       <th id="total"></th>
-      <td> USD </td>
     </tr>
   </tfoot>
 </table>
+
+<div>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+        <h2>Envio</h2>
+        <div class="custom-control custom-radio">
+      <input id="montevideo" name="envio" type="radio" value="10" required="" class="custom-control-input">
+      <label for="montevideo" class="custom-control-label">Standard</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input id="sur" name="envio" type="radio" value="15" required="" class="custom-control-input">
+      <label for="sur" class="custom-control-label">Premium</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input id="norte" name="envio" type="radio" value="20" required="" class="custom-control-input">
+      <label for="norte" class="custom-control-label">Gold</label>
+    </div>
+  
+    </div>
+  </main>
+<h4 class="text-center p-4">Costos</h4>
+<ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">Precio</h6>
+        <small class="text-muted">Precio sin envio</small>
+      </div>
+      <span class="text-muted" id="productCostText">-</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">Porcentaje</h6>
+        <small class="text-muted">Según el tipo de envio</small>
+      </div>
+      <span class="text-muted" id="comissionText">-</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total ($)</span>
+      <strong id="totalCostText">-</strong>
+    </li>
+  </ul>
+    
 <submit  type="button" class="btn btn-success btn-lg btn-block" > Completar compra </submit>
   
   <div id="spinner-wrapper">
