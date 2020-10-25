@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (productNameInput.value === "")
         {
             productNameInput.classList.add('is-invalid');
+           
             infoMissing = true;
         }
         
