@@ -41,11 +41,11 @@
     
     <div id="container">
         <div class="row">
-            <div class="col text-right">
-              <div><label class="btn btn-light active"> Buscar:  <input type="text" id="search"> 
-                <button id="clean" class="orange button" >Limpiar Busqueda  </button>
-              </label> </div>
-                <div class="btn-group btn-group-toggle mb-1" data-toggle="buttons">
+            <div class="col -sm-6 text-center">
+              <label> Buscar:  <input type="text" id="search"> <button id="clean" class="d-none d-md-block orange button" >Limpiar Busqueda  </button>
+              </label>
+            
+                <div class="  btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-light active , orange button" id="sortPriceAsc" >
                         <input type="radio" name="options" autocomplete="off" checked><i class="fa-sort-amount-asc"></i>Menor Precio
                     </label>
@@ -59,30 +59,35 @@
             </div>
         </div>
       <div class="row justify-content-end">
-        <div class="col-md-3"></div>
-          <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="col-sm-12  container">
             <div class="row container p-0 m-0">
               <div class="col">
-                <p class="font-weight-normal text-right my-2">Precio</p>
+                <p class="d-none d-md-block font-weight-normal text-right my-2">Precio</p>
               </div>
-              <div class="col">
+              <div class=" d-none d-md-block col">
                 <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
               </div>
-              <div class="col">
+              <div class=" d-none d-md-block col">
                 <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
               </div>
               <div class="col-3 p-0">
                 <div class="btn-group" role="group">
-                  <button class="btn btn-light btn-block, orange button" id="rangeFilterCount">Filtrar</button>
-                  <button class="btn btn-link btn-sm, orange button" id="clearRangeFilter">Limpiar</button>
+                  <button class="d-none d-md-block btn btn-light btn-block orange button" id="rangeFilterCount">Filtrar</button>
+                  <button class="d-none d-md-block btn-link btn-sm orange button" id="clearRangeFilter">Limpiar</button>
 
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-    <div class="list-group" id="car-list-container"></div>
+        </div>
+          <div class="container">
+            <div class="row" id="car-list-container">
+           
+              
+            
+          </div>
+        </div>
     <a type="button" class="btn btn-light btn-lg btn-block" href="category-info.html">Ver categoría</a>
     </div>
     <footer class="text-muted bg-light">

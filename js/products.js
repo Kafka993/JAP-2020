@@ -54,24 +54,22 @@ function showProductList(array){
             if (buscar == undefined || product.name.toLowerCase().indexOf(buscar) !=-1 || product.description.toLowerCase().indexOf(buscar) !=-1   ){
 
         htmlContentToAppend += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                
-                    </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name +`</h4>
-                        <p class="mb-1"> `+ product.description +`</p>
-                        <small class="text-muted">` + "Precio: " + " " + product.currency   +" "+ product.cost + ` </small>
-                        <small class="text-muted">` + product.soldCount  + ` Vendidos </small>
-                        
+        
+        
+        <div class="col-sm-6"> 
+        <div class="card">                    
+        <img src="${product.imgSrc}" alt="" class="card-img-top">
+                <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">${product.description} </p>
+                            <small class="text-muted">` + "Precio: " + " " + product.currency   +" "+product.cost + ` </small>
+                            <small class="text-muted">` + product.soldCount  + ` Vendidos </small>
+                           <a href="product-info.html" class="list-group-item list-group-item-action" class="btn btn-success btn-sm">Ver Producto</a><br>
+                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                          </div>
+                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
         `
         
     }
@@ -159,7 +157,7 @@ showProductList(productArray);
 document.getElementById("clean").addEventListener("click", function() {
     document.getElementById("search").value = ""
     buscar = undefined;
-    showProductList()
+    showProductList(productArray)
 
 });
 
