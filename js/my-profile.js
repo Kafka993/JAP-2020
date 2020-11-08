@@ -14,7 +14,10 @@ if(profile){
 
     profile = JSON.parse(profile)
     
-
+    if(profile.imgUrl !=""){
+    document.getElementById("imgProfile").src = profile.imgUrl
+}
+document.getElementById("imgUrl").value=profile.imgUrl
 document.getElementById("nombre").value=profile.nombre
 document.getElementById("numero").value=profile.edad
 document.getElementById("email").value=profile.email
@@ -23,6 +26,7 @@ document.getElementById("telefono").value=profile.telefono
 
 document.getElementById("saveProfile").addEventListener("click",function (e){
     let infomissing = false
+    let imgUrl = document.getElementById("imgUrl")
     let nombre = document.getElementById("nombre");
     let edad = document.getElementById("numero");
     let email = document.getElementById("email");
@@ -54,6 +58,7 @@ document.getElementById("saveProfile").addEventListener("click",function (e){
     }
 if(!infomissing){
     localStorage.setItem("profile",JSON.stringify({
+       imgUrl: imgUrl.value,
         nombre: nombre.value,
         edad: edad.value,
         email : email.value,
@@ -71,6 +76,7 @@ if(!infomissing){
 
 })
 document.getElementById("clean").addEventListener("click", function() {
+    document.getElementById("imgUrl").value=""
     document.getElementById("nombre").value = ""
     document.getElementById("numero").value = ""
     document.getElementById("email").value = ""
