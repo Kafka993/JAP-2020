@@ -16,7 +16,11 @@
   <body>
     <nav class="site-header sticky-top  bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+       <a class="py-2 d-none d-md-inline-block" href="inicio.html">
+       <div class="logo-image">
+        <img src="img/login.png" class="img-fluid">
+  </div>
+</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
@@ -42,10 +46,12 @@
     <div id="container">
         <div class="row">
             <div class="col -sm-6 text-center">
-              <label> Buscar:  <input type="text" id="search"> <button id="clean" class="d-none d-md-block orange button" >Limpiar Busqueda  </button>
-              </label>
-            
+              <label> Buscar </label> <input type="text" id="search"> 
+        </div>
+            <div class="row pading">
+              <div  class="col -sm-6 text-center" >
                 <div class="  btn-group btn-group-toggle" data-toggle="buttons">
+                  <button id="clean" class="d-none d-md-block  orange button" >Limpiar Busqueda  </button>
                     <label class="btn btn-light active , orange button" id="sortPriceAsc" >
                         <input type="radio" name="options" autocomplete="off" checked><i class="fa-sort-amount-asc"></i>Menor Precio
                     </label>
@@ -55,7 +61,8 @@
                     <label class="btn btn-light, orange button" id="sortsolddes" >
                         <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Vendidos
                     </label>
-                </div>
+                  </div>
+                  </div>
             </div>
         </div>
       <div class="row justify-content-end">

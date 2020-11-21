@@ -193,4 +193,12 @@ a.custom-card:hover {
 .checked {
   color:  #FF1493;
 }
-
+.logo-image{
+  width: 115px;
+  height: 46px;
+  overflow: hidden;
+  margin-top: -6px;
+}
+.pading{
+  padding-right: 100px;
+}

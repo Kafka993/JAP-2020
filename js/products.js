@@ -65,7 +65,6 @@ function showProductList(array){
                             <small class="text-muted">` + "Precio: " + " " + product.currency   +" "+product.cost + ` </small>
                             <small class="text-muted">` + product.soldCount  + ` Vendidos </small>
                            <a href="product-info.html" class="list-group-item list-group-item-action" class="btn btn-success btn-sm">Ver Producto</a><br>
-                            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
                           </div>
                          </div>
                     </div>
